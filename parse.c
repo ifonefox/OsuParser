@@ -38,7 +38,6 @@ int parse_collection(FILE *ptr, Collection *col){
   unsigned int i;
   char* name;
   char** beatmaps;
-  name = malloc(sizeof(String));
   bytes += parse_string(ptr,&name);
   col->name = name;
   // I am assuming you have less than 65536 beatmaps per collection
