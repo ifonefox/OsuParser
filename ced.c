@@ -13,8 +13,6 @@ int main(int argc, char *argv[]) {
   CollectionDB db;
   ptr = fopen("collection.db", "rb");
   parse_collectiondb(ptr, &db);
-  for (int i = 0; i < db.len; i++) {
-    printf("final name:%s\n",db.collections[i].name);
-  }
+  print_collectiondb(&db);
   return 0;
 }

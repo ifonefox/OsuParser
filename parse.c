@@ -2,6 +2,21 @@
 #include <stdlib.h>
 #include "parse.h"
 
+void print_collection(Collection *col){
+  printf("\"%s\" (%d)\n",col->name, col->len);
+  for (int i = 0; i < col->len; i++) {
+    printf("  %i. %s\n",i+1,col->beatmaps[i]);
+  }
+}
+void print_collectiondb(CollectionDB *db){
+  printf("version: %d\n",db->version);
+  for (int i = 0; i < db->len; i++) {
+    printf("%d: ",i+1);
+    print_collection(db->collections + i);
+  }
+}
+
+
 int parse_collectiondb(FILE *ptr, CollectionDB *db){
   int bytes = 0;
   int version;
