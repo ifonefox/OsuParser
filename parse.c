@@ -1,16 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "parse.h"
-int main(int argc, char *argv[]) {
-  FILE *ptr;
-  CollectionDB db;
-  ptr = fopen("collection.db", "rb");
-  parse_collectiondb(ptr, &db);
-  for (int i = 0; i < db.len; i++) {
-    printf("final name:%s\n",db.collections[i].name);
-  }
-  return 0;
-}
+
 int parse_collectiondb(FILE *ptr, CollectionDB *db){
   int bytes = 0;
   int version;
