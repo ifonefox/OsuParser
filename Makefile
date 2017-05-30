@@ -1,6 +1,12 @@
 CC=clang
 CFLAGS=
-all: parse
+all: parse.o main
 
-parse: parse.c parse.h
-	$(CC) $(CFLAGS) parse.c -o parse
+main: parse.o
+	$(CC) $(CFLAGS) -o main main.c parse.o
+parse.o: parse.c 
+	$(CC) $(CFLAGS) -c parse.c 
+
+clean:
+	rm parse.o
+	rm main

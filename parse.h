@@ -1,3 +1,4 @@
+#include <stdio.h>
 typedef struct Collection {
   char* name;
   unsigned int len;

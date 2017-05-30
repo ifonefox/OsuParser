@@ -4,7 +4,7 @@
 
 void print_collection(Collection *col){
   printf("\"%s\" (%d)\n",col->name, col->len);
-  for (int i = 0; i < col->len; i++) {
+  for (unsigned int i = 0; i < col->len; i++) {
     printf("  %i. %s\n",i+1,col->beatmaps[i]);
   }
 }
